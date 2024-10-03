@@ -1,0 +1,49 @@
+<div class="box-border scroll-smooth">
+    <!-- Header -->
+
+    <app-menu-navegacao></app-menu-navegacao>
+
+    <!-- FIM HEADER -->
+
+    <!-- BANNER -->
+    <div
+      class="w-full h-3/4 bg-no-repeat bg-cover overflow-hidden"
+      style="background-image: url(images/banner.jpg)"
+    >
+      <section
+        class="container flex justify-around w-full h-full backdrop-blur-sm backdrop-brightness-[40%] backdrop-saturate-50"
+      >
+        <div class="w-4/5 flex p-3">
+          <section class="w-2/4 flex flex-col justify-center">
+            <div class="ml-1">
+              <h3 class="text-white">Olá, Faça seu login!</h3>
+              <p class="text-white">Sexta, 2 de fevereiro</p>
+            </div>
+
+            <app-barra-de-busca></app-barra-de-busca>
+          </section>
+
+          <section class="flex flex-col justify-center">
+            <header>
+              <p class="uppercase text-lg text-zinc-400 font-bold">Recomendados</p>
+            </header>
+
+            <div class="flex gap-2">
+              <app-card></app-card>
+              <app-card></app-card>
+              <app-card></app-card>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <!-- FIM BANNER -->
+
+    <!-- SECTION GALLERY -->
+    
+    <app-gallery></app-gallery>
+    
+    <app-footer></app-footer>
+      
+    </div>
