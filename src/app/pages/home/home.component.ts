@@ -1,20 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AppComponent } from '../app.component';
-import { CardComponent } from '../card/card.component';
-import { MenuNavegacaoComponent } from '../menu-navegacao/menu-navegacao.component';
-import { BarraDeBuscaComponent } from '../barra-de-busca/barra-de-busca.component';
-import { GalleryComponent } from '../gallery/gallery.component';
-import { FooterComponent } from '../footer/footer.component';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { BarberShopService } from '../services/barber-shop/barber-shop.service';
+import { CardComponent } from '../../components/card/card.component';
+import { MenuNavegacaoComponent } from '../../components/menu-navegacao/menu-navegacao.component';
+import { BarraDeBuscaComponent } from '../../components/barra-de-busca/barra-de-busca.component';
+import { GalleryComponent } from '../../components/gallery/gallery.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-teste',
   standalone: true,
-  imports:[ReactiveFormsModule, CommonModule, AppComponent, CardComponent, MenuNavegacaoComponent, BarraDeBuscaComponent, GalleryComponent, FooterComponent],
+  imports:[ReactiveFormsModule, CommonModule, CardComponent, MenuNavegacaoComponent, BarraDeBuscaComponent, GalleryComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

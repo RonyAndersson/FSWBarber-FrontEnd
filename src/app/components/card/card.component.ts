@@ -1,11 +1,12 @@
+import { inject } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BarberShopService } from '../services/barber-shop/barber-shop.service';
-import { BarberShopModel } from '../model/barber-shop.model';
+import { BarberShopModel } from '../../model/barber-shop.model';
+import { BarberShopService } from '../../services/barber-shop/barber-shop.service';
 
 @Component({
   selector: 'app-card',
