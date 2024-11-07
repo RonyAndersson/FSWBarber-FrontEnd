@@ -1,10 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { BarberShopModel } from '../../model/barber-shop.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BarberShopService {
 
-constructor() { }
+  private readonly URL_API = 'http://localhost:8080/barbershops';
+
+  constructor(private readonly _httpClient: HttpClient) { }
+
+  public getBarberShops(): Observable<Array<BarberShopModel>> {
+    return this._httpClient.get<Array<BarberShopModel>>(this.URL_API);
+  }
 
 }

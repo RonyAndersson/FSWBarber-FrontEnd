@@ -1,0 +1,23 @@
+.container-cards {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 16px;
+}
+
+.card {
+  display: inline-block;
+  margin-right: 16px;
+  width: 100%;
+}
+
+.container-cards::-webkit-scrollbar {
+  height: 8px;
+}
+.container-cards::-webkit-scrollbar-thumb {
+  background-color: #a0aec0;
+  border-radius: 4px;
+}
+.container-cards::-webkit-scrollbar-track {
+  background: #2d3748;
+}

@@ -5,13 +5,14 @@ import { MenuNavegacaoComponent } from './menu-navegacao/menu-navegacao.componen
 import { BarraDeBuscaComponent } from './barra-de-busca/barra-de-busca.component';
 import { FooterComponent } from './footer/footer.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { CommonModule } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

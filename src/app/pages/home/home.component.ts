@@ -8,6 +8,8 @@ import { BarraDeBuscaComponent } from '../barra-de-busca/barra-de-busca.componen
 import { GalleryComponent } from '../gallery/gallery.component';
 import { FooterComponent } from '../footer/footer.component';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { BarberShopService } from '../services/barber-shop/barber-shop.service';
 
 @Component({
   selector: 'app-teste',
