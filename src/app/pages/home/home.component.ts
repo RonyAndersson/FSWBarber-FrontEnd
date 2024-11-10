@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AppComponent } from '../app.component';
-import { CardComponent } from '../card/card.component';
-import { MenuNavegacaoComponent } from '../menu-navegacao/menu-navegacao.component';
-import { BarraDeBuscaComponent } from '../barra-de-busca/barra-de-busca.component';
-import { GalleryComponent } from '../gallery/gallery.component';
-import { FooterComponent } from '../footer/footer.component';
+import { AppComponent } from '../../app.component';
+import { CardComponent } from '../../card/card.component';
+import { MenuNavegacaoComponent } from '../../menu-navegacao/menu-navegacao.component';
+import { BarraDeBuscaComponent } from '../../barra-de-busca/barra-de-busca.component';
+import { GalleryComponent } from '../../gallery/gallery.component';
+import { FooterComponent } from '../../footer/footer.component';
 import { Router } from '@angular/router';
 
 @Component({
