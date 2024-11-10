@@ -1,0 +1,143 @@
+<div class="box-border scroll-smooth">
+  <!-- Header -->
+  <app-menu-navegacao2></app-menu-navegacao2>
+
+  <main class="w-full bg-zinc-900 p-5">
+    <section class="w-4/5 m-auto flex justify-around">
+      <article>
+        <header class="w-4/5">
+          <h6 class="text-white">Agendamentos</h6>
+        </header>
+        <section class="w-4/5 flex justify-around">
+          <div>
+            <p class="text-zinc-400 font-medium">Finalizados</p>
+
+            <app-card-finalizado></app-card-finalizado>
+          </div>
+        </section>
+      </article>
+
+      <div>
+        <div class="h-auto w-96">
+          <div class="group bg-zinc-800 rounded-xl p-4">
+            <div class="rounded-3xl">
+              <img
+                src="images/mapa.png"
+                alt="image"
+                class="rounded-xl w-full h-40 relative z-10"
+              />
+            </div>
+            <div
+              class="flex flex-col items-center justify-center gap-4 text-center"
+            >
+              <div class="w-ful mt-5">
+                <p class="text-white uppercase text-start">Sobre nós</p>
+                <p class="font-light text-sm text-white text-left">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Aperiam deserunt iusto quos autem dolorum possimus, laborum ad
+                  impedit, error, neque ducimus tenetur ea veniam perferendis
+                  numquam illum.
+                </p>
+              </div>
+
+              <section
+                class="w-full border-t-2 border-b-2 pt-4 pb-4 border-zinc-700"
+              >
+                <div class="flex justify-between items-center mb-2">
+                  <p class="flex text-white font-normal gap-2 items-center">
+                    <span>
+                      <svg
+                        class="w-6 h-6 text-white"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4Zm12 12V5H7v11h10Zm-5 1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+
+                    (11) 98204-5108
+                  </p>
+
+                  <span
+                    href=""
+                    class="bg-gray-700 rounded-xl p-2 text-white text-sm w-20"
+                    >Copiar</span
+                  >
+                </div>
+
+                <div class="flex justify-between items-center">
+                  <p class="flex text-white font-normal gap-2 items-center">
+                    <span>
+                      <svg
+                        class="w-6 h-6 text-white"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4Zm12 12V5H7v11h10Zm-5 1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+
+                    (11) 98204-5108
+                  </p>
+
+                  <span
+                    href=""
+                    class="bg-gray-700 rounded-xl p-2 text-white text-sm w-20"
+                    >Copiar</span
+                  >
+                </div>
+              </section>
+
+              <section class="w-full">
+                <div
+                  class="w-[85px] mb-2 rounded-full bg-zinc-700 flex items-center justify-center"
+                >
+                  <span class="text-zinc-400 text-xs font-bold p-1"
+                    >Finalizado</span
+                  >
+                </div>
+
+                <div class="w-full border-zinc-600 border rounded-lg p-2">
+                  <div class="text-white flex justify-between">
+                    <p class="text-start">Corte de Cabelo</p>
+                    <span>R$50.00</span>
+                  </div>
+                  <div class="text-sm flex justify-between">
+                    <p class="text-start text-zinc-400">Data</p>
+                    <span class="text-white">22 de julho</span>
+                  </div>
+                  <div class="text-sm flex justify-between">
+                    <p class="text-start text-zinc-400">Horario</p>
+                    <span class="text-white">09:45</span>
+                  </div>
+                  <div class="text-sm flex justify-between">
+                    <p class="text-start text-zinc-400">Barbearia</p>
+                    <span class="text-white">Vintage Barber</span>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <app-footer></app-footer>
+</div>
