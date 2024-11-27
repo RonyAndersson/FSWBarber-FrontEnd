@@ -16,4 +16,8 @@ export class BarberShopService {
     return this._httpClient.get<Array<BarberShopModel>>(this.URL_API);
   }
 
+  getBarberShopById(id: number): Observable<any> {
+    return this._httpClient.get(`${this.URL_API}/${id}`);
+  }
+
 }

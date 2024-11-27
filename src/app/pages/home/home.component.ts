@@ -18,9 +18,46 @@ import { FooterComponent } from '../../components/footer/footer.component';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {}
 
-  ngOnInit() {
+  userName: string | null = '';
+  currentDate: string = '';
+
+  ngOnInit(): void {
+    this.userName = sessionStorage.getItem('userName') || 'Olá, Faça seu login!';
+
+    this.currentDate = this.formatDate(new Date());
   }
 
+  private formatDate(date: Date): string {
+    const daysOfWeek = [
+      'Domingo',
+      'Segunda',
+      'Terça',
+      'Quarta',
+      'Quinta',
+      'Sexta',
+      'Sábado',
+    ];
+    const months = [
+      'janeiro',
+      'fevereiro',
+      'março',
+      'abril',
+      'maio',
+      'junho',
+      'julho',
+      'agosto',
+      'setembro',
+      'outubro',
+      'novembro',
+      'dezembro',
+    ];
+
+    const dayOfWeek = daysOfWeek[date.getDay()];
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+
+    return `${dayOfWeek}, ${day} de ${month}`;
+  }
 }

@@ -1,0 +1,52 @@
+<p>reserve-drawer works!</p>
+<mat-drawer-container>
+  <mat-drawer #drawer mode="over" position="end" class="bg-zinc-900">
+    <div class="p-4">
+      <h2 class="text-white text-lg font-bold">Fazer Reserva</h2>
+      <button mat-icon-button (click)="drawer.close()" class="absolute top-2 right-2 text-white">
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <div class="mt-4">
+        <!-- Calendário -->
+        <h3 class="text-white mb-2">Selecione a Data</h3>
+        <input
+        type="date"
+        [(ngModel)]="selectedDate"
+        class="p-2 rounded-lg bg-zinc-800 text-white w-full"
+      />
+      </div>
+
+      <div class="mt-4">
+        <!-- Horários -->
+        <h3 class="text-white mb-2">Horário</h3>
+        <div class="flex gap-2 flex-wrap">
+          <button
+            *ngFor="let time of availableTimes"
+            mat-raised-button
+            color="primary"
+            (click)="selectTime(time)"
+            [class.selected]="selectedTime === time"
+          >
+            {{ time }}
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <!-- Detalhes -->
+        <h3 class="text-white mb-2">Detalhes</h3>
+        <p class="text-gray-400">Serviço: {{ selectedService?.name }}</p>
+        <p class="text-gray-400">Preço: R$ {{ selectedService?.price }}</p>
+        <p class="text-gray-400">Data: {{ selectedDate | date }}</p>
+        <p class="text-gray-400">Horário: {{ selectedTime }}</p>
+      </div>
+
+      <div class="mt-6">
+        <button mat-raised-button color="primary" class="w-full" (click)="confirmReservation()">
+          Confirmar
+        </button>
+      </div>
+    </div>
+  </mat-drawer>
+</mat-drawer-container>

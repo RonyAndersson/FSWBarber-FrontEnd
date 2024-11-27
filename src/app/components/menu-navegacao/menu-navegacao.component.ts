@@ -17,4 +17,8 @@ export class MenuNavegacaoComponent {
     this._router.navigate(['/login']);
    }
 
+   public navigateToAgendamentos(): void {
+    this._router.navigate(['/agendamentos']);
+   }
+
 }
