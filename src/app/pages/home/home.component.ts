@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from '../../app.component';
 import { CardComponent } from '../../card/card.component';
@@ -20,11 +20,16 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  userName: string | null = '';
+  @Output() userName: string | null = '';
   currentDate: string = '';
 
   ngOnInit(): void {
-    this.userName = sessionStorage.getItem('userName') || 'Olá, Faça seu login!';
+    this.userName = sessionStorage.getItem('userName');
+    if(this.userName) {
+      this.userName = `Olá, ${this.userName}`
+    } else {
+      this.userName = 'Olá, faça seu login';
+    }
 
     this.currentDate = this.formatDate(new Date());
   }

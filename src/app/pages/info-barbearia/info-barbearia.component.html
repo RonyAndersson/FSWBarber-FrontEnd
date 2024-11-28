@@ -14,7 +14,7 @@
 
             <div class="mt-4 flex justify-between">
               <section>
-                <h5 class="text-white">Vintage Barber</h5>
+                <h5 class="text-white">Manolo</h5>
                 <p class="flex gap-1 items-center text-sm text-white">
                   <span class="">
                     <svg
@@ -33,7 +33,7 @@
                       />
                     </svg>
                   </span>
-                  Avenida São sebastião, 357, São Paulo
+                  Avenida paulista, 4905
                 </p>
               </section>
 
@@ -66,10 +66,90 @@
               </section>
             </div>
 
-          <!-- SECTION SERVIÇOS -->
+            <div
+              class="drawer-overlay"
+              *ngIf="isDrawerOpen"
+              (click)="closeDrawer()"
+            ></div>
+            <div class="drawer" *ngIf="isDrawerOpen">
+              <header class="drawer-header">
+                <h5>Fazer Reserva</h5>
+                <button class="close-button" (click)="closeDrawer()">X</button>
+              </header>
+              <main class="drawer-content">
+                <section class="calendar-section">
+                  <div class="calendar">
+                    <div class="calendar-header">
+                      <button (click)="previousMonth()">&#8249;</button>
+                      <span>{{ currentMonth }} {{ currentYear }}</span>
+                      <button (click)="nextMonth()">&#8250;</button>
+                    </div>
+                    <div class="calendar-body">
+                      <div class="weekdays">
+                        <span *ngFor="let day of weekdays">{{ day }}</span>
+                      </div>
+                      <div class="days">
+                        <span
+                          *ngFor="let date of daysInMonth"
+                          [class.empty]="!date.day"
+                          [class.active]="date.day === selectedDate"
+                          (click)="date.day ? selectDate(date.day) : null"
+                        >
+                          {{ date.day || "" }}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="times-section">
+                  <h5>Selecione um horário:</h5>
+                  <div class="time-slots">
+                    <button
+                      *ngFor="let time of times"
+                      (click)="selectTime(time)"
+                    >
+                      {{ time }}
+                    </button>
+                  </div>
+                </section>
+                <section class="summary-section">
+                  <h4>Resumo</h4>
+                  <p>Serviço: Corte de Cabelo</p>
+                  <p>Preço: R$50,00</p>
+                  <p>Data: {{ selectedDate }} de {{ currentMonth }}</p>
+                  <p>Horário: {{ selectedTime }}</p>
+                  <button class="confirm-button" (click)="confirmReservation()">
+                    Confirmar
+                  </button>
+                </section>
+              </main>
+            </div>
 
-           <app-servicos-cards></app-servicos-cards>
+            <div
+              class="popup-overlay"
+              *ngIf="isPopupVisible"
+              (click)="closePopup()"
+            ></div>
+            <div class="popup" *ngIf="isPopupVisible">
+              <div class="popup-content">
+                <div class="popup-icon">
+                  <span>&#10003;</span>
+                </div>
+                <h3 class="popup-title">Reserva Efetuada!</h3>
+                <p class="popup-message">
+                  Sua reserva foi agendada com sucesso.
+                </p>
+                <button class="popup-confirm-button" (click)="closePopup()">
+                  Confirmar
+                </button>
+              </div>
+            </div>
 
+            <!-- SECTION SERVIÇOS -->
+
+            <app-servicos-cards
+              (reservarClicked)="openDrawer()"
+            ></app-servicos-cards>
           </div>
         </div>
       </article>
@@ -92,7 +172,12 @@
                 <div class="w-ful mt-5">
                   <p class="text-white uppercase text-start">Sobre nós</p>
                   <p class="font-light text-sm text-white text-left">
-                    A rede de Barbearia foi uma das primeiras tematizadas na cidade de São Paulo. Ela oferece os serviços de cortes de cabelo, barbearia, massagem, limpeza de pele, depilação e podologia. O espaço conta com um ambiente charmoso, com uma decoração levemente voltada para as antigas barbearias dos anos 50.
+                    A rede de Barbearia foi uma das primeiras tematizadas na
+                    cidade de São Paulo. Ela oferece os serviços de cortes de
+                    cabelo, barbearia, massagem, limpeza de pele, depilação e
+                    podologia. O espaço conta com um ambiente charmoso, com uma
+                    decoração levemente voltada para as antigas barbearias dos
+                    anos 50.
                   </p>
                 </div>
 
@@ -161,7 +246,6 @@
                 </section>
 
                 <section class="w-full">
-
                   <div class="w-full border-zinc-600 border rounded-lg p-2">
                     <div class="text-sm font-normal flex justify-between">
                       <p class="text-start text-zinc-400">Segunda</p>
@@ -191,7 +275,6 @@
                       <p class="text-start text-zinc-400">Domingo</p>
                       <span class="text-white">Fchado</span>
                     </div>
-
                   </div>
                 </section>
               </div>

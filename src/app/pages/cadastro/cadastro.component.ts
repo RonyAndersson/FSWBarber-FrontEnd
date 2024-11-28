@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth-service/auth.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MenuNavegacaoComponent } from '../../components/menu-navegacao/menu-navegacao.component';
 
 @Component({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, MenuNavegacaoComponent],
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })

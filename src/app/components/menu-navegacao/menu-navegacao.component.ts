@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BarraDeBuscaComponent } from '../barra-de-busca/barra-de-busca.component';
 import { Router } from '@angular/router';
 
@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class MenuNavegacaoComponent {
 
+  @Input() username!: string | void;
+
   constructor(private readonly _router: Router) {}
 
   public navigateLogin(): void {
@@ -19,6 +21,10 @@ export class MenuNavegacaoComponent {
 
    public navigateToAgendamentos(): void {
     this._router.navigate(['/agendamentos']);
+   }
+
+   public logout(): void {
+    this.username = sessionStorage.clear();
    }
 
 }
